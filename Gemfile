@@ -6,5 +6,4 @@ gem 'puma'
 
 group :development, :test do
   gem 'rspec'
-  gem 'capybara'
 end
