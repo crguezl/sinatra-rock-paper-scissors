@@ -1,3 +1,3 @@
 #\ -s puma
 require './rps'
-run Example::App
+run RockPaperScissors::App

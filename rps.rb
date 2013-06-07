@@ -1,4 +1,4 @@
-module Example
+module RockPaperScissors
   require 'sinatra'
     class App < Sinatra::Base
 
