@@ -27,11 +27,11 @@ module Example
 
       # compare the player and computer throws to determine a winner
       if player_throw == computer_throw
-        '<a href="/">You tied with the computer. Try again!</a>'
+        'You tied with the computer. <a href="/">Try again!</a>'
       elsif computer_throw == @defeat[player_throw]
-        "<a href=\"/\">Nicely done; #{player_throw} beats #{computer_throw}!</a>"
+        "Nicely done; #{player_throw} beats #{computer_throw}. "+'<a href="/">Try again!</a>'
       else
-        "<a href=\"/\">Ouch; #{computer_throw} beats #{player_throw}. Better luck next time!</a>"
+        "Ouch; #{computer_throw} beats #{player_throw}. Better luck next time!. "+'<a href="/">Try again!</a>'
       end
     end
 
