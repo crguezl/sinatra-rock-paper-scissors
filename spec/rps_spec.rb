@@ -8,7 +8,6 @@ describe RockPaperScissors::App do
   include Rack::Test::Methods
 
   def app
-    #Sinatra::Application
     RockPaperScissors::App
   end
 
