@@ -7,3 +7,11 @@ a { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 40px
 
 a:hover { color: #90bcd0; }
 
+.help
+{
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  width: 5%;
+  background-color:#b0e0e6;
+}

@@ -26,13 +26,13 @@ module Example
 
       # compare the player and computer throws to determine a winner
       if @player_throw == @computer_throw
-        @answer = 'You tied with the computer. <a href="/">Try again!</a>'
+        @answer = 'You tied with the computer.'
         erb :play
       elsif @computer_throw == @defeat[@player_throw]
-        @answer = "Nicely done; #{@player_throw} beats #{@computer_throw}. "+'<a href="/">Try again!</a>'
+        @answer = "Nicely done; #{@player_throw} beats #{@computer_throw}"
         erb :play
       else
-        @answer = "Ouch; #{@computer_throw} beats #{@player_throw}. Better luck next time!. "+'<a href="/">Try again!</a>'
+        @answer = "Ouch; #{@computer_throw} beats #{@player_throw}. Better luck next time!."
         erb :play
       end
     end
