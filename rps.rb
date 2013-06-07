@@ -11,38 +11,34 @@ module Example
       @throws = @defeat.keys
     end
 
-    get '/throw/:type' do
-      # the params[] hash stores querystring and form data.
-      player_throw = params[:type].to_sym
+    get '/throw/:type' do |type|
+      @player_throw = type.to_sym
 
       # in the case of a player providing a throw that is not valid,
       # we halt with a status code of 403 (Forbidden) and let them
       # know they need to make a valid throw to play.
-      if !@throws.include?(player_throw)
+      if !@throws.include?(@player_throw)
         halt 403, "<a href='/'>You must throw one of the following: #{@throws}</a>"
       end
 
       # now we can select a random throw for the computer
-      computer_throw = @throws.sample
+      @computer_throw = @throws.sample
 
       # compare the player and computer throws to determine a winner
-      if player_throw == computer_throw
-        'You tied with the computer. <a href="/">Try again!</a>'
-      elsif computer_throw == @defeat[player_throw]
-        "Nicely done; #{player_throw} beats #{computer_throw}. "+'<a href="/">Try again!</a>'
+      if @player_throw == @computer_throw
+        @answer = 'You tied with the computer. <a href="/">Try again!</a>'
+        erb :play
+      elsif @computer_throw == @defeat[@player_throw]
+        @answer = "Nicely done; #{@player_throw} beats #{@computer_throw}. "+'<a href="/">Try again!</a>'
+        erb :play
       else
-        "Ouch; #{computer_throw} beats #{player_throw}. Better luck next time!. "+'<a href="/">Try again!</a>'
+        @answer = "Ouch; #{@computer_throw} beats #{@player_throw}. Better luck next time!. "+'<a href="/">Try again!</a>'
+        erb :play
       end
     end
 
     get '/*' do
-      '''
-    <ul> 
-    <li><a href="throw/rock">rock</a>
-    <li><a href="throw/paper">paper</a>
-    <li><a href="throw/scissors">scissors</a>
-    </ul>
-    '''
+      erb :root
     end
   end
 end

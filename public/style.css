@@ -1,0 +1,9 @@
+body { background: -moz-radial-gradient(#364D58,#000); background: -webkit-gradient(radial, center center,10,center center,1000, from(#364D58), to(#000)); color:#555; background-color:#151f23; }
+
+h1 { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 60px Georgia, Times, Serif;  text-align: center; color: #bfe1f1; text-shadow: 0px 2px 6px #333; }
+p, h2, li { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 40px Georgia, Times, Serif;  text-align: center; color: #bfe1f1; text-shadow: 0px 2px 6px #333; }
+
+a { display: block; text-decoration: none; margin: 0 0 30px 0; font: italic 40px Georgia, Times, Serif;  text-align: center; color: red; text-shadow: 0px 2px 6px #333; }
+
+a:hover { color: #90bcd0; }
+
